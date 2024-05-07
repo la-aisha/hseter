@@ -1,0 +1,49 @@
+class QRCodeProduct {
+  final int codeProduit;
+  final String nomCommercial;
+  final String limitesValidite;
+  final String nombrePeriodes;
+  final String typePeriode;
+  final int tempsAntiPassback;
+  final int tempsMultiValidation;
+  final int validiteCourseSimple;
+  final int voyagesTotaux;
+  final String dateBasculement;
+  final String supports;
+  final String profils;
+  final int prix;
+
+  QRCodeProduct({
+    required this.codeProduit,
+    required this.nomCommercial,
+    required this.limitesValidite,
+    required this.nombrePeriodes,
+    required this.typePeriode,
+    required this.tempsAntiPassback,
+    required this.tempsMultiValidation,
+    required this.validiteCourseSimple,
+    required this.voyagesTotaux,
+    required this.dateBasculement,
+    required this.supports,
+    required this.profils,
+    required this.prix,
+  });
+
+  factory QRCodeProduct.fromJson(Map<String, dynamic> json) {
+    return QRCodeProduct(
+      codeProduit: json['Code Produit'] as int,
+      nomCommercial: json['Nom Commercial'] as String,
+      limitesValidite: json['Limites de validité'] as String,
+      nombrePeriodes: json['Nombre de périodes'] as String,
+      typePeriode: json['Type de période'] as String,
+      tempsAntiPassback: json['Temps d\'anti-passback (sec)'] as int,
+      tempsMultiValidation: json['Temps de multi-validation (sec)'] as int,
+      validiteCourseSimple: json['Validité course simple (min)'] as int,
+      voyagesTotaux: json['Voyages totaux'] as int,
+      dateBasculement: json['Date de basculement'] as String,
+      supports: json['Supports'] as String,
+      profils: json['Profils'] as String,
+      prix: json['Prix'] as int,
+    );
+  }
+}
